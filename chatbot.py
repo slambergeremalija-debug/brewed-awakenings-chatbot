@@ -48,40 +48,62 @@ st.set_page_config(
     layout="centered"
 )
 
-# Temno rjav dizajn
+# ------------------ CSS: BELI OBLAČKI + TEMNO RJAVA OBROBA ------------------
+
 st.markdown(
     """
     <style>
-    body {
-        background-color: #2b1b12;
-        color: #f5f0e8;
+
+    body, .stApp {
+        background-color: #ffffff !important;
+        color: #3a2418;
         font-family: system-ui, sans-serif;
     }
-    .stApp {
-        background-color: #2b1b12;
-    }
+
     .block-container {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         max-width: 800px;
     }
+
+    /* Oblački */
     .stChatMessage {
-        background-color: #3a2418 !important;
-        border-radius: 12px !important;
+        background-color: #ffffff !important;
+        border: 2px solid #8b5a2b !important;
+        border-radius: 18px !important;
+        padding: 12px !important;
+        margin-bottom: 12px !important;
     }
+
+    /* Uporabnik – rahlo bež */
+    .stChatMessage[data-testid="stChatMessageUser"] {
+        background-color: #f7f2ec !important;
+    }
+
+    /* Input polje */
     .stTextInput > div > div > input,
     .stChatInput > div > div > textarea {
-        background-color: #3a2418 !important;
-        color: #f5f0e8 !important;
+        background-color: #ffffff !important;
+        color: #3a2418 !important;
         border-radius: 12px !important;
-        border: 1px solid #8b5a2b !important;
+        border: 2px solid #8b5a2b !important;
     }
+
+    /* Gumb */
     .stButton>button {
         background-color: #8b5a2b !important;
-        color: #f5f0e8 !important;
+        color: #ffffff !important;
         border-radius: 12px !important;
-        border: none;
+        border: none !important;
     }
+
+    /* Ikone */
+    .stChatMessageAvatar {
+        background-color: #8b5a2b !important;
+        color: white !important;
+        border-radius: 50% !important;
+    }
+
     </style>
     """,
     unsafe_allow_html=True
@@ -111,8 +133,8 @@ if "messages" not in st.session_state:
         }
     ]
 
-# Prikaz zgodovine pogovora
-for msg in st.session_state.messages:
+# Prikaz zgodovine pogovora — SKRIJE SYSTEM MESSAGE
+for msg in st.session_state.messages[1:]:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
