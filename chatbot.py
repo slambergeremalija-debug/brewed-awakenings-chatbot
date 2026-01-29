@@ -66,7 +66,6 @@ st.markdown(
         max-width: 800px;
     }
 
-    /* Oblački */
     .stChatMessage {
         background-color: #ffffff !important;
         border: 2px solid #8b5a2b !important;
@@ -75,12 +74,10 @@ st.markdown(
         margin-bottom: 12px !important;
     }
 
-    /* Uporabnik – rahlo bež */
     .stChatMessage[data-testid="stChatMessageUser"] {
         background-color: #f7f2ec !important;
     }
 
-    /* Input polje */
     .stTextInput > div > div > input,
     .stChatInput > div > div > textarea {
         background-color: #ffffff !important;
@@ -89,7 +86,6 @@ st.markdown(
         border: 2px solid #8b5a2b !important;
     }
 
-    /* Gumb */
     .stButton>button {
         background-color: #8b5a2b !important;
         color: #ffffff !important;
@@ -97,11 +93,17 @@ st.markdown(
         border: none !important;
     }
 
-    /* Ikone */
     .stChatMessageAvatar {
         background-color: #8b5a2b !important;
         color: white !important;
         border-radius: 50% !important;
+        width: 32px !important;
+        height: 32px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        font-weight: bold !important;
+        font-size: 16px !important;
     }
 
     </style>
