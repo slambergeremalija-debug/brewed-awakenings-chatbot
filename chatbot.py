@@ -12,7 +12,7 @@ Naši okusi prinašajo edinstveno doživetje vsake skodelice – od bogatih, int
 aromatičnih mešanic. Cilj Brewed Awakenings je začeti tvoj dan z navdihom in skrbno izbranimi kavami,
 ki popestrijo vsak trenutek. Ponujamo klasične napitke in gourmet mešanice.
 
-PONUDBA:
+PONUDBA (Ledena kava):
 • Klasična črna kava – 5.99€
 • Kava z vanilijevo aromo – 6.99€
 • Kava z pridihom kakava – 6.99€
