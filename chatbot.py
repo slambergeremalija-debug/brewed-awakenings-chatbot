@@ -48,14 +48,14 @@ st.set_page_config(
     layout="centered"
 )
 
-# ------------------ CSS — COFFEE VIBE + BEL INPUT TEKST ------------------
+# ------------------ CSS — COFFEE VIBE ------------------
 
 st.markdown("""
 <style>
 
-/* Ozadje */
+/* Toplo kremno ozadje */
 body, .stApp {
-    background-color: #fffaf3 !important; /* toplo kremno ozadje */
+    background-color: #fff8ef !important; /* latte cream */
     color: #3a2418 !important;
     font-family: "Inter", system-ui, sans-serif !important;
 }
@@ -67,24 +67,25 @@ body, .stApp {
     max-width: 800px !important;
 }
 
-/* Oblački */
+/* Oblački – assistant */
 div[data-testid="stChatMessage"] {
-    background-color: #ffffff !important;
-    border: 2px solid #8b5a2b !important;
+    background-color: #ffffff !important; /* white foam */
+    border: 2px solid #a06b3b !important; /* caramel brown */
     border-radius: 18px !important;
     padding: 12px !important;
     margin-bottom: 12px !important;
-    color: #3a2418 !important;
+    color: #3a2418 !important; /* dark roast text */
 }
 
+/* Oblački – user */
 div[data-testid="stChatMessage"][data-testid="stChatMessageUser"] {
-    background-color: #f3e7d9 !important; /* bolj kavna bež */
+    background-color: #f2e3d3 !important; /* cappuccino beige */
     color: #3a2418 !important;
 }
 
 /* Avatar */
 div[data-testid="stChatMessageAvatar"] {
-    background-color: #8b5a2b !important;
+    background-color: #8b5a2b !important; /* espresso brown */
     color: white !important;
     border-radius: 50% !important;
     width: 32px !important;
@@ -96,24 +97,24 @@ div[data-testid="stChatMessageAvatar"] {
     font-size: 16px !important;
 }
 
-/* INPUT POLJE – TEMNO KAVNO OZADJE + BEL TEKST */
+/* INPUT POLJE – temno espresso ozadje + bel tekst */
 .stChatInput > div > div > textarea {
-    background-color: #3a2418 !important; /* temno kavna */
+    background-color: #3a2418 !important; /* espresso */
     color: #ffffff !important; /* BEL TEKST */
     border-radius: 12px !important;
-    border: 2px solid #8b5a2b !important;
+    border: 2px solid #a06b3b !important; /* caramel */
     padding: 10px !important;
     font-size: 16px !important;
 }
 
-/* Placeholder */
+/* Placeholder – latte beige */
 .stChatInput > div > div > textarea::placeholder {
-    color: #d8c7b8 !important; /* svetlo kavna */
+    color: #e3d2c3 !important; /* latte */
 }
 
 /* Gumb */
 .stButton > button {
-    background-color: #8b5a2b !important;
+    background-color: #8b5a2b !important; /* espresso */
     color: #ffffff !important;
     border-radius: 12px !important;
     border: none !important;
