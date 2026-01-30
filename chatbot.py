@@ -48,12 +48,12 @@ st.set_page_config(
     layout="centered"
 )
 
-# ------------------ CSS — COFFEE VIBE ------------------
+# ------------------ CSS — COFFEE FOAM GRADIENT ------------------
 
 st.markdown("""
 <style>
 
-/* Toplo kremno ozadje */
+/* Ozadje */
 body, .stApp {
     background-color: #fff8ef !important; /* latte cream */
     color: #3a2418 !important;
@@ -67,25 +67,42 @@ body, .stApp {
     max-width: 800px !important;
 }
 
-/* Oblački – assistant */
-div[data-testid="stChatMessage"] {
-    background-color: #ffffff !important; /* white foam */
-    border: 2px solid #a06b3b !important; /* caramel brown */
-    border-radius: 18px !important;
-    padding: 12px !important;
-    margin-bottom: 12px !important;
-    color: #3a2418 !important; /* dark roast text */
+/* ASSISTANT oblaček – coffee foam gradient */
+div[data-testid="stChatMessage"]:not([data-testid="stChatMessageUser"]) {
+    background: radial-gradient(circle at top left,
+        #f7efe6 0%,
+        #e8d6c3 40%,
+        #d2b89a 100%
+    ) !important; /* cappuccino foam */
+    border: 2px solid #a06b3b !important;
+    border-radius: 20px !important;
+    padding: 16px !important;
+    margin-bottom: 14px !important;
 }
 
-/* Oblački – user */
+/* USER oblaček – dark roast gradient */
 div[data-testid="stChatMessage"][data-testid="stChatMessageUser"] {
-    background-color: #f2e3d3 !important; /* cappuccino beige */
-    color: #3a2418 !important;
+    background: linear-gradient(135deg,
+        #8b5a2b 0%,
+        #6b3f1f 50%,
+        #4a2a14 100%
+    ) !important; /* espresso swirl */
+    border: 2px solid #5c3a1a !important;
+    border-radius: 20px !important;
+    padding: 16px !important;
+    margin-bottom: 14px !important;
+}
+
+/* BEL, BOLD TEKST v oblačkih */
+div[data-testid="stChatMessage"] p {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
 }
 
 /* Avatar */
 div[data-testid="stChatMessageAvatar"] {
-    background-color: #8b5a2b !important; /* espresso brown */
+    background-color: #5c3a1a !important; /* dark roast */
     color: white !important;
     border-radius: 50% !important;
     width: 32px !important;
@@ -97,24 +114,24 @@ div[data-testid="stChatMessageAvatar"] {
     font-size: 16px !important;
 }
 
-/* INPUT POLJE – temno espresso ozadje + bel tekst */
+/* INPUT – espresso + bel tekst */
 .stChatInput > div > div > textarea {
-    background-color: #3a2418 !important; /* espresso */
-    color: #ffffff !important; /* BEL TEKST */
+    background-color: #3a2418 !important;
+    color: #ffffff !important;
     border-radius: 12px !important;
-    border: 2px solid #a06b3b !important; /* caramel */
-    padding: 10px !important;
+    border: 2px solid #8b5a2b !important;
+    padding: 12px !important;
     font-size: 16px !important;
 }
 
 /* Placeholder – latte beige */
 .stChatInput > div > div > textarea::placeholder {
-    color: #e3d2c3 !important; /* latte */
+    color: #e3d2c3 !important;
 }
 
 /* Gumb */
 .stButton > button {
-    background-color: #8b5a2b !important; /* espresso */
+    background-color: #8b5a2b !important;
     color: #ffffff !important;
     border-radius: 12px !important;
     border: none !important;
@@ -130,7 +147,7 @@ div[data-testid="stChatMessageAvatar"] {
 st.title("Brewed Awakenings – klepetalnik o kavi")
 st.write(
     "Postavi mi vprašanje o naši kavi, ponudbi ali kontaktu. "
-    "Če vprašanje ni povezano z Brewed Awakenings, ti bom to vljudno povedal."
+    "Če vprašanje ni povezano s Brewed Awakenings, ti bom to vljudno povedal."
 )
 
 # ------------------ SPOMIN ------------------
