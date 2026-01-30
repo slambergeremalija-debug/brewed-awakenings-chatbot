@@ -1,7 +1,0 @@
-[server]
-enableXsrfProtection = false
-enableCORS = false
-headless = true
-port = 8501
-enableWebsocketCompression = false
-allowEmbedding = true
