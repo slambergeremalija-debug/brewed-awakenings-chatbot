@@ -48,7 +48,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# ------------------ CSS ------------------
+# ------------------ CSS — TEMNO RJAVO BESEDILO ------------------
 
 st.markdown("""
 <style>
@@ -59,6 +59,12 @@ body, .stApp {
     font-family: system-ui, sans-serif !important;
 }
 
+/* VSE besedilo v aplikaciji */
+* {
+    color: #3a2418 !important;
+}
+
+/* Glavni container */
 .block-container {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
@@ -72,10 +78,12 @@ div[data-testid="stChatMessage"] {
     border-radius: 18px !important;
     padding: 12px !important;
     margin-bottom: 12px !important;
+    color: #3a2418 !important;
 }
 
 div[data-testid="stChatMessage"][data-testid="stChatMessageUser"] {
     background-color: #f7f2ec !important;
+    color: #3a2418 !important;
 }
 
 /* IKONE */
