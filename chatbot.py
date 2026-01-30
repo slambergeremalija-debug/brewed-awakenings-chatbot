@@ -1,7 +1,6 @@
 import streamlit as st
 from groq import Groq
 
-
 # ------------------ OSNOVNI PODATKI O STRANI ------------------
 
 OPIS_STRANI = """
@@ -49,20 +48,16 @@ st.set_page_config(
     layout="centered"
 )
 
-# ------------------ CSS — TEMNO RJAVO BESEDILO + BEL INPUT ------------------
+# ------------------ CSS — COFFEE VIBE + BEL INPUT TEKST ------------------
 
 st.markdown("""
 <style>
 
+/* Ozadje */
 body, .stApp {
-    background-color: #ffffff !important;
+    background-color: #fffaf3 !important; /* toplo kremno ozadje */
     color: #3a2418 !important;
-    font-family: system-ui, sans-serif !important;
-}
-
-/* VSE besedilo v aplikaciji */
-* {
-    color: #3a2418 !important;
+    font-family: "Inter", system-ui, sans-serif !important;
 }
 
 /* Glavni container */
@@ -72,7 +67,7 @@ body, .stApp {
     max-width: 800px !important;
 }
 
-/* OBLAČKI */
+/* Oblački */
 div[data-testid="stChatMessage"] {
     background-color: #ffffff !important;
     border: 2px solid #8b5a2b !important;
@@ -83,11 +78,11 @@ div[data-testid="stChatMessage"] {
 }
 
 div[data-testid="stChatMessage"][data-testid="stChatMessageUser"] {
-    background-color: #f7f2ec !important;
+    background-color: #f3e7d9 !important; /* bolj kavna bež */
     color: #3a2418 !important;
 }
 
-/* IKONE */
+/* Avatar */
 div[data-testid="stChatMessageAvatar"] {
     background-color: #8b5a2b !important;
     color: white !important;
@@ -101,25 +96,29 @@ div[data-testid="stChatMessageAvatar"] {
     font-size: 16px !important;
 }
 
-/* INPUT POLJE – BELO BELO BELO */
+/* INPUT POLJE – TEMNO KAVNO OZADJE + BEL TEKST */
 .stChatInput > div > div > textarea {
-    background-color: #ffffff !important;
-    color: #ffffff !important; /* ← BEL TEKST */
+    background-color: #3a2418 !important; /* temno kavna */
+    color: #ffffff !important; /* BEL TEKST */
     border-radius: 12px !important;
     border: 2px solid #8b5a2b !important;
+    padding: 10px !important;
+    font-size: 16px !important;
 }
 
-/* Placeholder naj bo svetlo rjav */
+/* Placeholder */
 .stChatInput > div > div > textarea::placeholder {
-    color: #c7b8a8 !important;
+    color: #d8c7b8 !important; /* svetlo kavna */
 }
 
-/* GUMB */
+/* Gumb */
 .stButton > button {
     background-color: #8b5a2b !important;
     color: #ffffff !important;
     border-radius: 12px !important;
     border: none !important;
+    padding: 10px 20px !important;
+    font-size: 16px !important;
 }
 
 </style>
