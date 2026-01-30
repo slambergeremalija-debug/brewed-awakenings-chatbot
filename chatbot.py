@@ -48,68 +48,71 @@ st.set_page_config(
     layout="centered"
 )
 
-# ------------------ CSS: BELI OBLAČKI + TEMNO RJAVA OBROBA ------------------
+# ------------------ CSS ------------------
 
-st.markdown(
-    """
-    <style>
+st.markdown("""
+<style>
 
-    body, .stApp {
-        background-color: #ffffff !important;
-        color: #3a2418;
-        font-family: system-ui, sans-serif;
-    }
+body, .stApp {
+    background-color: #ffffff !important;
+    color: #3a2418 !important;
+    font-family: system-ui, sans-serif !important;
+}
 
-    .block-container {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-        max-width: 800px;
-    }
+.block-container {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+    max-width: 800px !important;
+}
 
-    .stChatMessage {
-        background-color: #ffffff !important;
-        border: 2px solid #8b5a2b !important;
-        border-radius: 18px !important;
-        padding: 12px !important;
-        margin-bottom: 12px !important;
-    }
+/* OBLAČKI */
+div[data-testid="stChatMessage"] {
+    background-color: #ffffff !important;
+    border: 2px solid #8b5a2b !important;
+    border-radius: 18px !important;
+    padding: 12px !important;
+    margin-bottom: 12px !important;
+}
 
-    .stChatMessage[data-testid="stChatMessageUser"] {
-        background-color: #f7f2ec !important;
-    }
+div[data-testid="stChatMessage"][data-testid="stChatMessageUser"] {
+    background-color: #f7f2ec !important;
+}
 
-    .stTextInput > div > div > input,
-    .stChatInput > div > div > textarea {
-        background-color: #ffffff !important;
-        color: #3a2418 !important;
-        border-radius: 12px !important;
-        border: 2px solid #8b5a2b !important;
-    }
+/* IKONE */
+div[data-testid="stChatMessageAvatar"] {
+    background-color: #8b5a2b !important;
+    color: white !important;
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-weight: bold !important;
+    font-size: 16px !important;
+}
 
-    .stButton>button {
-        background-color: #8b5a2b !important;
-        color: #ffffff !important;
-        border-radius: 12px !important;
-        border: none !important;
-    }
+/* INPUT POLJE */
+.stTextInput > div > div > input,
+.stChatInput > div > div > textarea {
+    background-color: #ffffff !important;
+    color: #3a2418 !important;
+    border-radius: 12px !important;
+    border: 2px solid #8b5a2b !important;
+}
 
-    .stChatMessageAvatar {
-        background-color: #8b5a2b !important;
-        color: white !important;
-        border-radius: 50% !important;
-        width: 32px !important;
-        height: 32px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        font-weight: bold !important;
-        font-size: 16px !important;
-    }
+/* GUMB */
+.stButton > button {
+    background-color: #8b5a2b !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+    border: none !important;
+}
 
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+</style>
+""", unsafe_allow_html=True)
+
+# ------------------ UI ------------------
 
 st.title("Brewed Awakenings – klepetalnik o kavi")
 st.write(
@@ -117,7 +120,7 @@ st.write(
     "Če vprašanje ni povezano z Brewed Awakenings, ti bom to vljudno povedal."
 )
 
-# ------------------ SPOMIN V SEJI ------------------
+# ------------------ SPOMIN ------------------
 
 if "messages" not in st.session_state:
     st.session_state.messages = [
@@ -135,16 +138,15 @@ if "messages" not in st.session_state:
         }
     ]
 
-# Prikaz zgodovine pogovora — SKRIJE SYSTEM MESSAGE
 for msg in st.session_state.messages[1:]:
     with st.chat_message(msg["role"]):
         st.markdown(msg["content"])
 
-# ------------------ GROQ KLIENT ------------------
+# ------------------ GROQ ------------------
 
 client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
-# ------------------ VNOS UPORABNIKA ------------------
+# ------------------ VNOS ------------------
 
 vnos = st.chat_input("Vprašaj me kaj o Brewed Awakenings...")
 
