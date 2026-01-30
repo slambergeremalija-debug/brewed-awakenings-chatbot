@@ -48,7 +48,7 @@ st.set_page_config(
     layout="centered"
 )
 
-# ------------------ CSS — TEMNO RJAVO BESEDILO ------------------
+# ------------------ CSS — TEMNO RJAVO BESEDILO + BEL INPUT ------------------
 
 st.markdown("""
 <style>
@@ -100,13 +100,17 @@ div[data-testid="stChatMessageAvatar"] {
     font-size: 16px !important;
 }
 
-/* INPUT POLJE */
-.stTextInput > div > div > input,
+/* INPUT POLJE – BELO BELO BELO */
 .stChatInput > div > div > textarea {
     background-color: #ffffff !important;
-    color: #3a2418 !important;
+    color: #ffffff !important; /* ← BEL TEKST */
     border-radius: 12px !important;
     border: 2px solid #8b5a2b !important;
+}
+
+/* Placeholder naj bo svetlo rjav */
+.stChatInput > div > div > textarea::placeholder {
+    color: #c7b8a8 !important;
 }
 
 /* GUMB */
