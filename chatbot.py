@@ -1,6 +1,7 @@
 import streamlit as st
 from groq import Groq
 
+
 # ------------------ OSNOVNI PODATKI O STRANI ------------------
 
 OPIS_STRANI = """
